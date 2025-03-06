@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    // Seed the random number generator
+    srand(time(0));
+
+    // Roll two dice
+    int die1 = rand() % 6 + 1;
+    int die2 = rand() % 6 + 1;
+    int sum = die1 + die2;
+
+    // Display the rolls
+    cout << "You rolled: " << die1 << " + " << die2 << " = " << sum << endl;
+
+    // Determine the result based on the first roll
+    if (sum == 7 || sum == 11) {
+        cout << "Congratulations! You win!" << endl;
+    } else if (sum == 2 || sum == 3 || sum == 12) {
+        cout << "Craps! You lose." << endl;
+    } else {
+        int point = sum;
+        cout << "Your point is set to: " << point << endl;
+        cout << "Rolling until you match your point or roll a 7..." << endl;
+
+        while (true) {
+            die1 = rand() % 6 + 1;
+            die2 = rand() % 6 + 1;
+            sum = die1 + die2;
+            cout << "You rolled: " << die1 << " + " << die2 << " = " << sum << endl;
+
+            if (sum == point) {
+                cout << "You matched your point! You win!" << endl;
+                break;
+            } else if (sum == 7) {
+                cout << "You rolled a 7. You lose." << endl;
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
+
