@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string choice;
+
+    // Introduction to the game
+    cout << "You encounter a wild beast in the forest!" << endl;
+    cout << "Do you choose to 'fight' or 'run'? " << endl;
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    // Evaluate user's choice
+    if (choice == "fight") {
+        cout << "You bravely fight the beast and emerge victorious!" << endl;
+    } else if (choice == "run") {
+        cout << "You run away safely, but the beast still lurks in the forest." << endl;
+    } else {
+        cout << "Invalid choice! The beast attacks while you hesitate." << endl;
+    }
+
+    return 0;
+}
