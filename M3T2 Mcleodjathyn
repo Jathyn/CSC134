@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double length1, width1, length2, width2, area1, area2;
+
+    // Get dimensions for the first rectangle
+    cout << "Enter the length of the first rectangle: ";
+    cin >> length1;
+    cout << "Enter the width of the first rectangle: ";
+    cin >> width1;
+
+    // Get dimensions for the second rectangle
+    cout << "Enter the length of the second rectangle: ";
+    cin >> length2;
+    cout << "Enter the width of the second rectangle: ";
+    cin >> width2;
+
+    // Calculate the areas
+    area1 = length1 * width1;
+    area2 = length2 * width2;
+
+    // Display the results
+    cout << "\nThe area of the first rectangle is: " << area1 << endl;
+    cout << "The area of the second rectangle is: " << area2 << endl;
+
+    // Compare the areas
+    if (area1 > area2) {
+        cout << "The first rectangle has the larger area." << endl;
+    } else if (area2 > area1) {
+        cout << "The second rectangle has the larger area." << endl;
+    } else {
+        cout << "Both rectangles have the same area." << endl;
+    }
+
+    return 0;
+}
