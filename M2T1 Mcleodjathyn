@@ -1,0 +1,46 @@
+// CSC 134
+// M2T1 - Apple Orchard with User Input
+// Norris
+// 1/27/2025
+// This program will take user input for an apple sales program.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Apple sales program with user input
+
+    // Declare variables
+    string name;       // User's name
+    int num_apples;    // Number of apples
+    double cost_each;  // Price per apple
+    double total_cost; // Total cost
+
+    // Ask for the user's name
+    cout << "Please enter your name: ";
+    cin >> name;
+
+    // Ask for number of apples
+    cout << "How many apples do you have? ";
+    cin >> num_apples;
+
+    // Ask for the price per apple
+    cout << "What is the price of each apple? $";
+    cin >> cost_each;
+
+    // Print out the information
+    cout << endl; // Blank line for spacing
+    cout << "Welcome to the " << name << " apple farm!" << endl;
+    cout << "You have " << num_apples << " apples in stock." << endl;
+    cout << "Each apple costs $" << cost_each << endl;
+
+    // Calculate total price
+    total_cost = num_apples * cost_each;
+    cout << "If you sell them all, the total price is: $" << total_cost << endl;
+
+    // End of program
+    cout << endl; // Blank line for spacing
+    cout << "Thank you for using the Apple Orchard Program!" << endl;
+
+    return 0; // No errors
+}
