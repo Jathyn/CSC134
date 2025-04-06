@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int height, width;
+
+    // Get user input
+    cout << "Enter height: ";
+    cin >> height;
+    cout << "Enter width: ";
+    cin >> width;
+
+    // Draw the block using nested loops
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            cout << "* ";
+        }
+        cout << endl;  // New line after each row
+    }
+
+    return 0;
+}
