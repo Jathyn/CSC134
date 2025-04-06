@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+// Void function - just prints a message
+void sayHello() {
+    cout << "Hello from the void function!" << endl;
+}
+
+// Value-returning function - adds two numbers
+int addNumbers(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    // Call the void function
+    sayHello();
+
+    // Call the value-returning function
+    int num1 = 7;
+    int num2 = 3;
+    int result = addNumbers(num1, num2);
+
+    // Display result
+    cout << "The sum of " << num1 << " and " << num2 << " is " << result << "." << endl;
+
+    return 0;
+}
