@@ -1,0 +1,26 @@
+// File: m4t1_combined.cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Program 5-3: Hello 5 times
+    int count = 1;
+    cout << "=== Hello Loop ===" << endl;
+    while (count <= 5) {
+        cout << "Hello" << endl;
+        count++;
+    }
+
+    // Program 5-6: Table of numbers and squares
+    int number = 1;
+    cout << "\n=== Number and Square Table ===" << endl;
+    cout << "Number\tSquare\n";
+    cout << "--------------\n";
+
+    while (number <= 10) {
+        cout << number << "\t" << (number * number) << endl;
+        number++;
+    }
+
+    return 0;
+}
