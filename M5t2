@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+// Value-returning function: calculates square
+int square(int num) {
+    return num * num;
+}
+
+// Void function: prints one line of number and its square
+void printAnswerLine(int num, int squared) {
+    cout << num << " squared is " << squared << "." << endl;
+}
+
+int main() {
+    // Loop from 1 to 10
+    for (int i = 1; i <= 10; i++) {
+        int sq = square(i);              // Get square using function
+        printAnswerLine(i, sq);          // Print result using void function
+    }
+
+    return 0;
+}
