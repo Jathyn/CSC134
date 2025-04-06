@@ -1,0 +1,45 @@
+#include "raylib.h"
+
+enum GameScreen { SCREEN_START, SCREEN_GAME };
+
+int main() {
+    const int screenWidth = 800;
+    const int screenHeight = 600;
+
+    InitWindow(screenWidth, screenHeight, "M4LAB2 - Raylib Grid Example");
+    SetTargetFPS(60);
+
+    GameScreen currentScreen = SCREEN_START;
+
+    Texture2D alien = LoadTexture("alien.png"); // Use your own sprite
+
+    while (!WindowShouldClose()) {
+        BeginDrawing();
+        ClearBackground(BLACK);
+
+        if (currentScreen == SCREEN_START) {
+            DrawText("Press [ENTER] to start", 250, 280, 20, GREEN);
+            if (IsKeyPressed(KEY_ENTER)) currentScreen = SCREEN_GAME;
+        }
+        else if (currentScreen == SCREEN_GAME) {
+            int rows = 5;
+            int cols = 8;
+            int spacingX = 80;
+            int spacingY = 60;
+
+            for (int row = 0; row < rows; row++) {
+                for (int col = 0; col < cols; col++) {
+                    int x = 100 + col * spacingX;
+                    int y = 50 + row * spacingY;
+                    DrawTexture(alien, x, y, WHITE);
+                }
+            }
+        }
+
+        EndDrawing();
+    }
+
+    UnloadTexture(alien);
+    CloseWindow();
+    return 0;
+}
