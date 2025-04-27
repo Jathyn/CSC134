@@ -1,0 +1,63 @@
+#include <iostream>
+#include <iomanip> // for formatting output
+using namespace std;
+
+// Function Prototypes
+double getLength();
+double getWidth();
+double getArea(double length, double width);
+void displayData(double length, double width, double area);
+
+int main() {
+    double length, width, area;
+
+    // Get the rectangle's length and width
+    length = getLength();
+    width = getWidth();
+
+    // Calculate the area
+    area = getArea(length, width);
+
+    // Display the data
+    displayData(length, width, area);
+
+    return 0;
+}
+
+// Function to get the length from the user
+double getLength() {
+    double length;
+    cout << "Enter the length of the rectangle: ";
+    cin >> length;
+    while (length <= 0) {
+        cout << "Length must be positive. Try again: ";
+        cin >> length;
+    }
+    return length;
+}
+
+// Function to get the width from the user
+double getWidth() {
+    double width;
+    cout << "Enter the width of the rectangle: ";
+    cin >> width;
+    while (width <= 0) {
+        cout << "Width must be positive. Try again: ";
+        cin >> width;
+    }
+    return width;
+}
+
+// Function to calculate the area
+double getArea(double length, double width) {
+    return length * width;
+}
+
+// Function to display the length, width, and area
+void displayData(double length, double width, double area) {
+    cout << fixed << setprecision(2);
+    cout << "\nRectangle Details:" << endl;
+    cout << "Length: " << length << " units" << endl;
+    cout << "Width : " << width << " units" << endl;
+    cout << "Area  : " << area << " square units" << endl;
+}
