@@ -1,0 +1,86 @@
+#include <iostream>
+using namespace std;
+
+// Function Prototypes
+void main_menu();
+void choice_front_door();
+void choice_back_door();
+void choice_go_home();
+void choice_secret_path(); // New branch 1
+void choice_climb_tree();   // New branch 2
+
+int main() {
+    main_menu();
+    return 0;
+}
+
+// Function Definitions
+
+void main_menu() {
+    int choice = 0;
+    do {
+        cout << "\nYou are standing in front of a spooky house.\n";
+        cout << "What do you want to do?\n";
+        cout << "1. Enter through the front door.\n";
+        cout << "2. Go around to the back door.\n";
+        cout << "3. Go back home.\n";
+        cout << "4. Take the secret path.\n";
+        cout << "Enter your choice (1-4): ";
+        cin >> choice;
+
+        if (choice == 1) {
+            choice_front_door();
+        }
+        else if (choice == 2) {
+            choice_back_door();
+        }
+        else if (choice == 3) {
+            choice_go_home();
+        }
+        else if (choice == 4) {
+            choice_secret_path();
+        }
+        else {
+            cout << "Invalid input. Please choose 1, 2, 3, or 4.\n";
+        }
+    } while (choice < 1 || choice > 4);
+}
+
+void choice_front_door() {
+    cout << "\nYou bravely open the front door... It creaks loudly.\n";
+    cout << "Inside, a ghost appears and challenges you to a riddle contest!\n";
+    // You could add another decision here later if you want
+}
+
+void choice_back_door() {
+    cout << "\nYou sneak quietly to the back door...\n";
+    cout << "It's locked! You find a mysterious key hidden under a flowerpot.\n";
+    cout << "You unlock the door and step inside.\n";
+}
+
+void choice_go_home() {
+    cout << "\nYou decide that maybe today isn't the day for spooky adventures.\n";
+    cout << "You head back home and curl up with a good book. The End.\n";
+}
+
+void choice_secret_path() {
+    cout << "\nYou find a hidden path in the woods and follow it.\n";
+    cout << "At the end of the path is a huge tree with a rope hanging down.\n";
+    cout << "Do you want to:\n";
+    cout << "1. Climb the tree.\n";
+    cout << "2. Turn back.\n";
+    int secret_choice;
+    cin >> secret_choice;
+    if (secret_choice == 1) {
+        choice_climb_tree();
+    }
+    else {
+        cout << "You decide not to risk it and head back to the house.\n";
+        main_menu(); // Send them back to the main menu
+    }
+}
+
+void choice_climb_tree() {
+    cout << "\nYou climb the tree and find a treehouse full of treasure!\n";
+    cout << "Congratulations! You've found the hidden riches of the spooky house.\n";
+}
