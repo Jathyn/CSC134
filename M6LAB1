@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <ctime>
+#include <cstdlib>
+#include <random> // <-- Needed for std::shuffle
+
+using namespace std;
+
+// Shuffle the deck properly using C++11+ method
+void shuffleDeck(vector<char>& deck) {
+    random_device rd;
+    mt19937 g(rd());
+    shuffle(deck.begin(), deck.end(), g);
+}
+
+// Draw the last round from the deck
+char drawRound(vector<char>& deck) {
+    if (!deck.empty()) {
+        char round = deck.back();
+        deck.pop_back();
+        return round;
+    }
+    return 'D'; // If somehow deck is empty, return dummy
+}
+
+// Main simulation of the game
+void simulateGame() {
+    vector<char> deck = {'L', 'L', 'D', 'D', 'D', 'L'}; // 3 live, 3 dummy
+    shuffleDeck(deck);
+
+    int playerHits = 0;
+    int dealerHits = 0;
+    bool playerTurn = true;
+
+    while (playerHits < 2 && dealerHits < 2 &
