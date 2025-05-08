@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Restaurant class definition
+class Restaurant {
+private:
+    string name;
+    int rating;
+
+public:
+    // Setter for name
+    void setName(string restaurantName) {
+        name = restaurantName;
+    }
+
+    // Setter for rating
+    void setRating(int restaurantRating) {
+        rating = restaurantRating;
+    }
+
+    // Getter for name
+    string getName() const {
+        return name;
+    }
+
+    // Getter for rating
+    int getRating() const {
+        return rating;
+    }
+};
+
+int main() {
+    // Create three Restaurant objects
+    Restaurant r1, r2, r3;
+
+    // Set the values for each restaurant
+    r1.setName("Mama Mia's Pizza");
+    r1.setRating(8);
+
+    r2.setName("The Golden Dragon");
+    r2.setRating(9);
+
+    r3.setName("Burger Barn");
+    r3.setRating(7);
+
+    // Display the restaurant information
+    cout << "Restaurant: " << r1.getName() << ", Rating: " << r1.getRating() << "/10" << endl;
+    cout << "Restaurant: " << r2.getName() << ", Rating: " << r2.getRating() << "/10" << endl;
+    cout << "Restaurant: " << r3.getName() << ", Rating: " << r3.getRating() << "/10" << endl;
+
+    return 0;
+}
