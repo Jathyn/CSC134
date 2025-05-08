@@ -1,0 +1,66 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function Prototypes
+void part1();
+void part2();
+
+int main() {
+    part1();
+    part2();
+    return 0;
+}
+
+// Part 1: No Arrays
+void part1() {
+    cout << "=== Part 1: No Arrays ===" << endl;
+    
+    int totalCars = 0;
+    int carsToday = 0;
+    int days = 5; // Monday to Friday
+    string daysOfWeek[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+
+    for (int i = 0; i < days; i++) {
+        cout << "Enter number of cars for " << daysOfWeek[i] << ": ";
+        cin >> carsToday;
+        totalCars += carsToday;
+    }
+
+    double average = static_cast<double>(totalCars) / days;
+    cout << "Total cars for the week: " << totalCars << endl;
+    cout << "Average cars per day: " << average << endl << endl;
+}
+
+// Part 2: Using an Array
+void part2() {
+    cout << "=== Part 2: Using Arrays and Graph ===" << endl;
+    
+    const int SIZE = 5;
+    int cars[SIZE];
+    string daysOfWeek[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+
+    int totalCars = 0;
+
+    // Input and store into array
+    for (int i = 0; i < SIZE; i++) {
+        cout << "Enter number of cars for " << daysOfWeek[i] << ": ";
+        cin >> cars[i];
+        totalCars += cars[i];
+    }
+
+    double average = static_cast<double>(totalCars) / SIZE;
+
+    cout << "\nTotal cars for the week: " << totalCars << endl;
+    cout << "Average cars per day: " << average << endl;
+
+    // ASCII Graph
+    cout << "\nGraph of Cars Passed Each Day:\n";
+    for (int i = 0; i < SIZE; i++) {
+        cout << daysOfWeek[i] << ": ";
+        for (int j = 0; j < cars[i] / 10; j++) { // Scale: 1 star (*) per 10 cars
+            cout << "*";
+        }
+        cout << " (" << cars[i] << " cars)" << endl;
+    }
+}
