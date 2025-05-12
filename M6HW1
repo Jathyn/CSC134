@@ -1,0 +1,69 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+bool hasKey = false;
+bool gameRunning = true;
+
+void room1();
+void room2();
+void room3();
+
+int main() {
+    cout << "Welcome to the Text Adventure Game!\n";
+    cout << "Objective: Find the key and escape through the locked door.\n\n";
+    room1();
+    return 0;
+}
+
+void room1() {
+    string choice;
+    cout << "[Room 1] You are in a dark room with two doors.\n";
+    cout << "One leads to the storage room, the other to the hallway.\n";
+    cout << "Where do you want to go? (storage/hallway): ";
+    cin >> choice;
+
+    if (choice == "storage") {
+        room2();
+    } else if (choice == "hallway") {
+        room3();
+    } else {
+        cout << "Invalid choice.\n";
+        room1();
+    }
+}
+
+void room2() {
+    string choice;
+    cout << "[Room 2 - Storage] You found a dusty old key on a shelf.\n";
+    hasKey = true;
+    cout << "You picked up the key.\n";
+    cout << "Go back to the main room? (yes): ";
+    cin >> choice;
+    if (choice == "yes") {
+        room1();
+    } else {
+        room2();
+    }
+}
+
+void room3() {
+    string choice;
+    cout << "[Room 3 - Hallway] You see a locked door at the end.\n";
+
+    if (hasKey) {
+        cout << "You use the key to unlock the door. You escaped!\n";
+        cout << "Congratulations, you win!\n";
+        gameRunning = false;
+    } else {
+        cout << "The door is locked. You need a key.\n";
+        cout << "Go back to the main room? (yes): ";
+        cin >> choice;
+        if (choice == "yes") {
+            room1();
+        } else {
+            room3();
+        }
+    }
+}
